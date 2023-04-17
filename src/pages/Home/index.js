@@ -17,6 +17,10 @@ import GetLastEvent from "../../helpers/LastEvent/index"
 const Page = () => {
   const { data } = useData()
   const [last, setLast] = useState()
+  useEffect(() => {
+    // get the last event from a copy of the events' array
+    if (data) setLast(GetLastEvent(data?.events.slice()));
+  }, [data]);
   return <>
     <header>
       <Menu />
