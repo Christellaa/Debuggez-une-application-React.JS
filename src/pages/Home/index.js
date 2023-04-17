@@ -16,6 +16,7 @@ import GetLastEvent from "../../helpers/LastEvent/index"
 
 const Page = () => {
   const { data } = useData()
+  const [last, setLast] = useState()
   return <>
     <header>
       <Menu />
