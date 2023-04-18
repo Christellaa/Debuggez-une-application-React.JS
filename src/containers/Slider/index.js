@@ -51,6 +51,7 @@ const Slider = () => {
                   key={`${event.id}`}
                   type="radio"
                   name="radio-button"
+                  checked={index === radioIdx}
                   onChange={() => changeCard(radioIdx)}
                 />
               ))}
