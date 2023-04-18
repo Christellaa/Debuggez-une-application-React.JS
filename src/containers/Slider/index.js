@@ -15,6 +15,9 @@ const Slider = () => {
       setIndex((idx) => (idx < byDateDesc.length - 1 ? index + 1 : 0));
     }
   };
+  const changeCard = (idx) => {
+    setIndex(idx);
+  }
   useEffect(() => {
     const interval = setInterval(() => {
       nextCard();
