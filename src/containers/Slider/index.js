@@ -19,6 +19,9 @@ const Slider = () => {
     const interval = setInterval(() => {
       nextCard();
     }, 5000);
+    return () => clearInterval(interval);
+  }, [index, nextCard]);
+
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
