@@ -42,21 +42,20 @@ const Slider = () => {
               </div>
             </div>
           </div>
-          <div className="SlideCard__paginationContainer">
-            <div className="SlideCard__pagination">
-              {byDateDesc.map((_, radioIdx) => (
-                <input
-                  key={`${event.id}`}
-                  type="radio"
-                  name="radio-button"
-                  checked={index === radioIdx}
-                  onChange={() => changeCard(radioIdx)}
-                />
-              ))}
-            </div>
-          </div>
-        </>
       ))}
+      <div className="SlideCard__paginationContainer">
+        <div className="SlideCard__pagination">
+          {byDateDesc?.map((radio, radioIdx) => (
+            <input
+              key={radio.id}
+              type="radio"
+              name="radio-button"
+              checked={index === radioIdx}
+              onChange={() => changeCard(radioIdx)}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
