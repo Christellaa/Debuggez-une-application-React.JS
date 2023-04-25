@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Slider from "./index";
 import { api, DataProvider } from "../../contexts/DataContext";
 
@@ -41,4 +41,17 @@ describe("When slider is created", () => {
       "Oeuvre à la coopération entre le secteur public et le privé."
     );
   });
+  it("should change card when user is clicking on matching button", async () => {
+    window.console.error = jest.fn();
+    api.loadData = jest.fn().mockReturnValue(data);
+    render(
+      <DataProvider>
+        <Slider />
+      </DataProvider>
+    );
+    const buttons = await screen.findAllByTestId("radio-testid");
+    const thirdButton = buttons[2];
+    fireEvent.click(thirdButton);
+    expect(screen.getByText("World economic forum")).toBeInTheDocument();
+  })
 });
