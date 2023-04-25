@@ -38,7 +38,10 @@ describe("When a page is created", () => {
     expect(cards).toBeInTheDocument();
   })
   it("a list a people is displayed", () => {
-    // to implement
+    render(<Home />);
+    const people = screen.getByTestId("people-testid");
+    expect(people).toBeInTheDocument();
+    expect(screen.getByText("Animateur"));
   })
   it("a footer is displayed", () => {
     // to implement
