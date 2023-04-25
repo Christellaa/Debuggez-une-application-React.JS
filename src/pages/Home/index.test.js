@@ -51,6 +51,17 @@ describe("When a page is created", () => {
     expect(screen.getByText("Contactez-nous"));
   })
   it("an event card, with the last event, is displayed", () => {
-    // to implement
+    render(
+      <>
+        <Home />
+        <EventCard />
+      </>
+    );
+    const lastCard = screen.getByTestId("card-testid");
+    const lastImg = screen.getAllByTestId("card-image-testid");
+    expect(lastCard).toBeInTheDocument();
+    expect(lastCard.getAttribute("class").includes("Eventcard--small"));
+    expect(lastImg).not.toBeNaN();
+    expect(lastImg).toBeDefined();
   })
 });
