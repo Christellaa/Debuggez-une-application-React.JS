@@ -44,7 +44,11 @@ describe("When a page is created", () => {
     expect(screen.getByText("Animateur"));
   })
   it("a footer is displayed", () => {
-    // to implement
+    render(<Home />);
+    const footer = screen.getByTestId("footer-testid");
+    expect(footer).toBeInTheDocument();
+    expect(screen.getByText("Notre derniére prestation"));
+    expect(screen.getByText("Contactez-nous"));
   })
   it("an event card, with the last event, is displayed", () => {
     // to implement
