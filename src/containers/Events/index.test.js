@@ -55,7 +55,7 @@ describe("When Events is created", () => {
           <Events />
         </DataProvider>
       );
-      expect(await screen.findByText("An error occured")).toBeInTheDocument();
+      await screen.findByText("An error occured");
     });
   });
   describe("and we select a category", () => {
